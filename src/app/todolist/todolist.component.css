@@ -1,0 +1,108 @@
+h1 {
+	background: #066BAF; 
+	color: white;
+	margin: 0;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.fa-plus {
+	float: right;
+}
+
+li {
+	background: white;
+	height: 40px;
+	line-height: 40px;
+	color: gray;
+	padding-left: 20px;
+}
+
+li:nth-child(2n){
+	background: #f7f7f7;
+}
+
+.deleteBtn {
+	background: #D9534F;
+	height: 40px;
+	margin-left: 20px;
+	text-align: center;
+	color: white;
+	width: 0px;
+	-webkit-transition: 0.2s linear;
+	-o-transition: 0.2s linear;
+	transition: 0.2s linear;
+	opacity: 0;
+	float: right;
+}
+
+.completedChk {
+	margin-right: 10px;
+}
+
+li:hover span {
+	width: 40px;
+	opacity: 1.0;
+}
+
+input {
+	font-size: 18px;
+	background-color: white;
+	width: 100%;
+	padding: 13px 13px 13px 20px;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	color: #066BAF;
+	border: 3px solid rgba(0,0,0,0);
+
+	background: white;
+	border: 3px solid #066BAF;
+	outline: none;
+}
+
+input:focus {
+	background: white;
+	border: 3px solid #066BAF;
+	outline: none;
+}
+
+#container {
+	width: 360px;
+	margin: 100px auto;
+	background: white;
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.1);
+	        box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.visible {
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition: opacity 1s linear;
+	-o-transition: opacity 1s linear;
+	transition: opacity 1s linear;
+}
+
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: visibility 0s 0.25s, opacity 0.25s linear;
+	-o-transition: visibility 0s 0.25s, opacity 0.25s linear;
+	transition: visibility 0s 0.25s, opacity 0.25s linear;
+	background-color: transparent;
+	position: absolute;
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.fa-check-square-o {
+	color: #5CB85C;
+}
