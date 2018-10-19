@@ -15,18 +15,25 @@ export class ToDoListComponent implements OnInit {
   private inputVisible: Boolean = true;
 
   ngOnInit() {
-    this.toDoService.getToDoList().snapshotChanges()
-    .subscribe(tasks => {
-      this.toDoList = [];
-      tasks.forEach(rawTask => {
-          const jsonTask: any = rawTask.payload.toJSON();
-          if (jsonTask) {
-            this.toDoList.push(new Task(jsonTask.name, jsonTask.complete, rawTask.key));
-          }
+    try {
+      this.toDoService.getToDoList().snapshotChanges()
+      .subscribe(tasks => {
+        this.toDoList = [];
+        tasks.forEach(rawTask => {
+            const jsonTask: any = rawTask.payload.toJSON();
+            if (jsonTask) {
+              this.toDoList.push(new Task(jsonTask.name, jsonTask.complete, rawTask.key));
+            }
+        });
       });
-    });
+  } catch (e) {
+
+  }
   }
 
+  /*
+   *
+   */
   addTask(input: HTMLInputElement): void {
     if (input.value) {
       this.toDoService.addTask({name: input.value, complete: false});
@@ -34,12 +41,17 @@ export class ToDoListComponent implements OnInit {
     }
   }
 
+  /*
+   *
+   */
   updateTask(task: Task): void {
     this.toDoService.updateTask(task);
   }
 
+  /*
+   *
+   */
   deleteTask(task: Task): void {
     this.toDoService.deleteTask(task);
   }
-
 }

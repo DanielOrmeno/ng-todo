@@ -5,6 +5,8 @@ export const environment = {
     authDomain: 'to-do-list-87824.firebaseapp.com',
     databaseURL: 'https://to-do-list-87824.firebaseio.com',
     projectId: 'to-do-list-87824',
+    storageBucket: 'to-do-list-87824.appspot.com',
+    messagingSenderId: '280244402216'
   }
 };
 

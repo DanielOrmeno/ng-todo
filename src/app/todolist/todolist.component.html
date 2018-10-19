@@ -1,7 +1,7 @@
-<h1>To Do List<i class="fa fa-plus" (click)="inputVisible = !inputVisible"></i></h1>
-<input autofocus type="text" [ngClass]="inputVisible ? 'visible' : 'hidden'" placeholder="Add New Task" #taskName (keyup.enter)="addTask(taskName)" ng-enter="addTask(taskName)" (keydown.enter)="addTask(taskName)">
+<h1>To Do List<i class="fa fa-plus" (click)="inputVisible = !inputVisible; $event.stopPropagation();"></i></h1>
+<input autofocus type="text" [ngClass]="inputVisible ? 'visible' : 'hidden'" placeholder="Add New Task" #taskName (keydown.enter)="addTask(taskName)">
   <ul>
-<li *ngFor="let task of toDoList" (click)="updateTask(task)">
+<li *ngFor="let task of toDoList" (click)="updateTask(task); $event.stopPropagation();">
   <span class="completedChk">
     <i class="fa" [ngClass]="task.complete ? 'fa-check-square-o' : 'fa-square-o'" aria-hidden="true"></i>
   </span>

@@ -1,4 +1,6 @@
+<app-toolbar></app-toolbar>
 <div id="container">
-    <app-todolist></app-todolist>
+    <app-todolist *ngIf="!!this.authService.getCurrentUser()"></app-todolist>
+    <app-login *ngIf="!this.authService.getCurrentUser()"></app-login>
 </div>
 

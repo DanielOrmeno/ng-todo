@@ -1,9 +1,53 @@
-.dialogdemoBasicUsage #popupContainer {
-    position: relative;
-  }
-  
-  #login-dialog {
-    max-width: 90%;
-    width: 500px;
-  }
-  
+md-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+/* .signin-content {
+  padding: 60px 1rem;
+} */
+
+.full-width-input {
+  width: 100%;
+}
+
+p {
+  text-align: center;
+}
+
+.authBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+} 
+
+
+.my-form{
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+ 
+.full-width {
+  width: 100%;
+}
+
+.logEml, .logPwd {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+mat-label {
+  flex: auto;
+}
+
+input {
+  width: 70%;
+}
+
+button {
+  margin: 0 10px;
+}
+

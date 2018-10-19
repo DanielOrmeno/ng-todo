@@ -1,0 +1,16 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* Avoids creating new custom themes etc just for one colour change */
+.mat-toolbar.mat-primary.mat-toolbar-single-row{
+    background: #066BAF;
+}
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.angular-logo {
+    margin: 0 4px 3px 0;
+    height: 35px;
+    vertical-align: middle;
+}

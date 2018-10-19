@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatCardModule, MatInputModule } from '@angular/material';
+import { ToolbarComponent } from './toolbar.component';
 import { AuthService } from '../shared/auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { BehaviorSubject } from 'rxjs';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {AngularFireModule} from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
 import { environment } from '../../environments/environment';
 
 const FirestoreStub = {
@@ -17,11 +17,9 @@ const FirestoreStub = {
   }),
 };
 
-import { LoginComponent } from './login.component';
-
-describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
+describe('ToolbarComponent', () => {
+  let component: ToolbarComponent;
+  let fixture: ComponentFixture<ToolbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -32,17 +30,16 @@ describe('LoginComponent', () => {
         MatButtonModule,
         MatFormFieldModule,
         MatCardModule,
-        MatInputModule,
-        BrowserAnimationsModule
+        MatInputModule
       ],
-      declarations: [ LoginComponent ],
+      declarations: [ ToolbarComponent ],
       providers: [AuthService, {provide: AngularFireAuth, useValue: FirestoreStub}]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginComponent);
+    fixture = TestBed.createComponent(ToolbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -51,14 +48,8 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should request to register a new user', async(() => {
-    spyOn(component, 'registerUser');
-
-    const button = fixture.debugElement.nativeElement.querySelector('#regBtn');
-    button.click();
-
-    fixture.whenStable().then(() => {
-      expect(component.registerUser).toHaveBeenCalled();
-    });
+  it('should not display log out button when there is no current user', async(() => {
+    const button = fixture.debugElement.nativeElement.querySelector('button');
+    expect(button).toBeFalsy();
   }));
 });
