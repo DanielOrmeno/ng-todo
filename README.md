@@ -1,6 +1,6 @@
 # To Do List
 
-This to do app is built in Angular 6, using Firebase as the database. 
+This to do app is built in Angular 6, using Firebase as the database. Enter any valid email and a password greater than 6 characters to get access (there may be a short delay of a few seconds). All tasks will be associated with this email address, so you can log in at your convenience.
 
 ## Current features
 
